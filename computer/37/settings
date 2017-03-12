@@ -1,0 +1,10 @@
+{
+  [ "shell.autocomplete" ] = true,
+  [ "shell.allow_disk_startup" ] = true,
+  [ "shell.allow_startup" ] = true,
+  [ "lua.autocomplete" ] = true,
+  [ "list.show_hidden" ] = false,
+  pid = "5Qj9JBU9",
+  [ "edit.autocomplete" ] = true,
+  level = "1",
+}

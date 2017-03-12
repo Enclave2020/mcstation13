@@ -1,0 +1,13 @@
+	term.clear()
+	textutils.slowPrint("doorOS Console Installer")
+	if (fs.exists("startup")) then
+		fs.delete("startup")
+		textutils.slowPrint("Previous boot file had removed.")
+	end
+	textutils.slowPrint("Begin coping data...")
+	fs.copy("/disk/boot", "startup")
+	settings.set("pid", "Sc5ARKYg")
+	settings.save("settings")
+	textutils.slowPrint("Rebooting")
+	disk.eject("top")
+	os.reboot()

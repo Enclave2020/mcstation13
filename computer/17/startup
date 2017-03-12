@@ -1,0 +1,5 @@
+while true do
+  lightTime = (os.time() > 20.5) or (os.time() < 3.5)
+  redstone.setOutput("right", not lightTime)
+  sleep(60)
+end

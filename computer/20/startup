@@ -1,0 +1,13 @@
+printer = peripheral.wrap("left")
+printer.newPage()
+
+printer.setCursorPos(6, 1)
+printer.write("ACCESS INCREASING")
+printer.setCursorPos(1, 2)
+printer.write("OLD: ada")
+printer.write("testtt")
+printer.setCursorPos(1, 3)
+printer.write("testttttttt")
+printer.setPageTitle("My page")
+printer.endPage()
+

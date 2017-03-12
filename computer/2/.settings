@@ -1,0 +1,9 @@
+{
+  label = "top",
+  [ "shell.allow_disk_startup" ] = true,
+  [ "shell.allow_startup" ] = true,
+  [ "shell.autocomplete" ] = true,
+  [ "lua.autocomplete" ] = true,
+  [ "list.show_hidden" ] = false,
+  [ "edit.autocomplete" ] = true,
+}

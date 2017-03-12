@@ -1,0 +1,12 @@
+settings.load("settings")
+
+term.clear()
+print("Access card is active!")
+
+modem = peripheral.wrap("back")
+modem.open(1338)
+while true do
+ access = settings.get("access", 0)
+	modem.transmit(1337, 1338, access)
+	sleep(0.5)
+end

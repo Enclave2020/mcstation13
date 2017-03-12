@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head lang="ru">
+    <meta charset="UTF-8">
+    <meta name="description" content="????????-????????? ??????. ???????????????? ???????? ??? ???? ?? ?????.">
+    <meta name="keywords" content="??????? ???????, ?????????? ??????? ????, ?????????">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>??????</title>
+    <script type="text/javascript" src="http://nashnet.ua/js/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="http://nashnet.ua/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://nashnet.ua/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="http://nashnet.ua/css/style.css">
+    <script src="http://nashnet.ua/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $.getJSON('https://my.nashnet.ua/ajax.php', {getState: 1}, function (data) {
+                if (data) {
+                    if (data.can_pay_and_activate_montly_tariff) {
+                        $('#login_info_text_block1').hide();
+                        $('#login_info_text_block2, #can_pay_and_activate_montly_tariff_block').show();
+                    } else {
+                        $('#error_text').html(data.state);
+                        $('#error_block').show();
+                    }
+                }
+            });
+        });
+    </script>
+
+</head>
+<body>
+<div class="container">
+    <div class="main">
+        <header>
+            <div class="row">
+                <div class="col-lg-6 col-lg-push-3">
+                    <div class="navbar-right navbar-static-top login">
+                        <form name="ulogin" class="form-inline visible-lg-inline-block visible-md-inline-block visible-sm-inline-block visible-xs-inline-block" method="post" action="https://my.nashnet.ua" target="_self">
+                            <img src="http://nashnet.ua/img/key.svg" width="28px" height="28px" alt="" class="visible-lg-inline-block visible-md-inline-block">
+                            <div class="form-group">
+                                <input type="text" class="form-control input-sm" id="Inputlogin" name="login" placeholder="???. ????">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control input-sm" id="InputPassword" name="password" placeholder="??????">
+                            </div>
+                            <button type="submit" class="btn btn-act btn-sm">?????</button>
+                        </form>
+                        <button class="btn btn-orange btn-sm headbutton visible-lg-inline-block visible-md-inline-block visible-sm-inline-block" ONCLICK="ga('send', 'pageview', '/order');window.location.href='https://my.nashnet.ua/request.php?lang=ru#connect'">????????????</button>
+                        <button class="btn btn-blue btn-sm headbutton visible-lg-inline-block visible-md-inline-block visible-sm-inline-block">???: (044) 585-11-11</button>
+                        <a href="https://www.facebook.com/nashnet.ua" class="imgkn imgfb hidden-xs pull-right" target="_blank"></a>
+                        <a href="http://vk.com/nashnet" class="imgkn imgvk hidden-xs pull-right" target="_blank"></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-lg-pull-6 col-md-9 col-sm-9 col-xs-9 logo"><a href="http://nashnet.ua/index.html"><img src="http://nashnet.ua/img/logo.svg" class="img-responsive" alt="nashnet"></a></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-lg-push-3">
+                    <div class="navbar">
+                        <ul class="nav navbar-nav visible-xs-inline-block">
+                            <li class="visible-xs-inline-block"><a href="https://my.nashnet.ua/tariffs.php?lang=ru" class="visible-xs-inline-block">??????</a></li>
+                            <li class="visible-xs-inline-block"><a href="http://nashnet.ua/promo.html">?????</a></li>
+                            <li class="visible-xs-inline-block"><a href="http://nashnet.ua/pay.html">??????</a></li>
+                        </ul>
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                            ????
+                            <span class="sr-only">??????? ????</span>
+                        </button>
+                        <div class="collapse navbar-collapse navbar-right col-lg-6 col-md-9 col-sm-9" id="navbar">
+                            <ul class="nav navbar-nav">
+                                <li class="hidden-xs"><a href="http://nashnet.ua/promo.html">?????</a></li>
+                                <li class="hidden-xs"><a href="https://my.nashnet.ua/tariffs.php?lang=ru">??????</a></li>
+                                <li><a href="https://my.nashnet.ua/request.php?lang=ru">????????</a></li>
+                                <li><a href="http://nashnet.ua/abon.html">????????</a></li>
+                                <li><a href="http://nashnet.ua/contacts.html">????????</a></li>
+                                <li><a href="http://nashnet.ua/faq.html">??????/?????</a></li>
+                                <li class="hidden-xs"><a href="http://nashnet.ua/pay.html">??????</a></li>
+                                <li class="visible-xs"><a href="https://my.nashnet.ua">?????? ???????</a></li>
+                                <li class="select_lg"><a href="" class="lngswith"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="main">
+            <div class="row">
+                <div class="col-lg-7 col-lg-offset-1 text-center">
+                    <div class="h45"></div>
+                    <div style="display:none" id="error_block">
+                        <img src="http://nashnet.ua/img/atention.png" alt="">
+                        <div id="error_text">
+                        </div>
+                    </div>
+                    <div id="can_pay_and_activate_montly_tariff_block" style="display: none;">
+                        <h2 class="orange">
+                            ?? ????? ????? ?? ???? ?????????? ??????? ??? ???????? ?????????, ?? ? ?????? ?????? ?????????? ??? ?????? ????? ??
+                            ????? ??????. ??? ?????? ??????? ? ????????? ????????? ??????? "??????????".
+                        </h2>
+
+                        <script type="text/javascript">
+                            $('#can_pay_and_activate_montly_tariff_button').live('click', function (e) {
+                                e.preventDefault();
+                                $.getJSON('ajax.php', {activate_montly_tariff: 1}, function (data) {
+                                    if (data) {
+                                        $('#error_block, #can_pay_and_activate_montly_tariff_block').hide();
+                                        $('#activated_montly_tariff_block').show();
+                                    }
+                                });
+                            });
+                        </script>
+
+                        <input type="button" class="button" value="??????????" tabindex="1" id="can_pay_and_activate_montly_tariff_button">
+
+                    </div>
+                    <div id="activated_montly_tariff_block" style="display: none;">
+                        <img src="http://nashnet.ua/img/atention.png" alt="">
+                        <h2 class="orange">??????????? ????????????, ???????? ?????????? ? ????????? ??????!</h2>
+                    </div>
+                    <div id="login_info_text_block2" style="display: none;">
+                        <p>??? ????????? ?????????? ? ????? ??????? ? ?????????? ??????? ??????? ??????? ??? ??????? ???? ? ??????.</p>
+                    </div>
+                    <p>&nbsp;</p>
+
+                </div>
+                <div class="col-lg-7 col-lg-offset-1 text-center">
+                    <h2 class="orange">?????????? ? ?????????? ??????? ???????</h2>
+                    <p id="login_info_text_block1">
+                        ?????????? ??????? ??? ????? ? ??????, ??? ????????? ?????????? ? ????? ??????? ? ?????????? ??????? ???????.
+                    </p>
+                    <form name="ulogin" class="form-inline visible-lg-inline-block visible-md-inline-block visible-sm-inline-block visible-xs-inline-block" method="post" action="https://my.nashnet.ua" target="_self">
+                        <div class="form-group">
+                            <input type="text" class="form-control input-sm" id="Inputlogin" name="login" placeholder="???. ????">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control input-sm" id="InputPassword" name="password" placeholder="??????">
+                        </div>
+                        <button type="submit" class="btn btn-act btn-sm">?????</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-lg-push-3 col-md-3 col-md-push-3 col-sm-9 col-xs-9" style="text-align:center;">
+                <div class="visible-lg h45"></div>
+                <button class="btn btn-orange wow bounce" onclick="location.href='https://my.nashnet.ua/request.php?lang=ru#connect'">????????????</button>
+            </div>
+            <div class="col-lg-3 col-lg-pull-3 col-md-3 col-md-pull-3 col-sm-4 col-xs-9">
+                02232, ?. ????, ??-?. ??????????? 73-?, <span class="text-nowrap">??? «??????»</span>
+                <div class="col-lg-4">
+                    ????? ??????:<br>
+                    <a href="tel:0445851111" class="tel">(044) 585-11-11</a><br>
+                    <a href="tel:0935851111" class="tel">(093) 585-11-11</a><br>
+                </div>
+                <div class="col-lg-4">
+                    ????????????:<br>
+                    <a href="tel:0445851110" class="tel">(044) 585-11-10</a><br>
+                    <a href="tel:0931720002" class="tel">(093) 172-00-02</a><br>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-9 pull-right text-right">
+                ??? "??????"<br>? ?????????? ?????:<br><br>
+                <a href="http://vk.com/nashnet" class="imgf imgfvk" target="_blank"></a> <a href="https://www.facebook.com/nashnet.ua" class="imgf imgffb" target="_blank"></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-9">
+                <hr>&copy; "??????", 2002-2016. ?????????????? ?????????? ? ????????? © "??????", 2004-2016.
+            </div>
+        </div>
+    </div>
+</footer>
+<link rel="stylesheet" href="css/animate.css">
+<script src="js/wow.min.js"></script>
+<script>
+    new WOW().init();
+</script>
+<!--google-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-2744495-1', 'auto');
+    ga('send', 'pageview');
+</script>
+<!-- ??? ???? ???????????? Google -->
+<script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id =
+            959064000;var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+    /* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+<noscript>
+    <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/959064000/?value=0&amp;guid=ON&amp;script=0"/></div>
+</noscript>
+<!-- ?????. ??? ???? ???????????? Google -->
+<img src="//api.merchenta.com/merchenta/pxl?add=rU0AyjVTko"/>
+<!-- Google Tag Manager -->
+<noscript>
+    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-5D65DG" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<script>(function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({
+        'gtm.start': new Date().getTime(), event: 'gtm.js'
+    });
+    var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+    j.async = true;
+    j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+    f.parentNode.insertBefore(j, f);
+})(window, document, 'script', 'dataLayer', 'GTM-5D65DG');</script>
+<!-- End Google Tag Manager -->
+</body>
+</html>
