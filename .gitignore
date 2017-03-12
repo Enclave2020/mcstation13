@@ -1,5 +1,5 @@
 level.dat_old
-stats/
-playerdata/
-DIM1/
-DIM1-1/
+stats/*
+playerdata/*
+DIM1/*
+DIM-1/*

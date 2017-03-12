@@ -25,14 +25,26 @@ function createAccess()
 	fs.copy("startup", "/disk/startup")
 end
 
+function setName()
+	term.clear()
+	term.setCursorPos(1, 1)
+	term.setTextColor(colors.yellow)
+	textutils.slowPrint("Write user name:")
+	name = read()
+	settings.load("/disk/settings")
+	settings.set("name", name)
+	settings.save("/disk/settings")
+end
+
 function mainMenu()
 	term.clear()
 	term.setCursorPos(1, 1)
 	term.setTextColor(colors.yellow)
-	print("doorOS console B0")
-	print("1. Access menu")
-	print("2. Eject disk")
-	print("3. Create access card")
+	textutils.slowPrint("doorOS console B0")
+	textutils.slowPrint("1. Access menu")
+	textutils.slowPrint("2. Eject disk")
+	textutils.slowPrint("3. Create access card")
+	textutils.slowPrint("4. Set username")
 
 	a = tonumber(read())
 	if a == 1 then 
@@ -47,6 +59,10 @@ function mainMenu()
 		createAccess()
 	end
 
+	if a == 4 then
+		setName()
+	end
+
 	mainMenu()
 end
 
@@ -56,7 +72,7 @@ function accessMenu()
 
 	if not disk.hasData("top") then
 		term.setTextColor(colors.red)
-		print("WARNING: Insert access card.")
+		textutils.slowPrint("WARNING: Insert access card.")
 		sleep(1)
 		mainMenu()
 	end

@@ -90,7 +90,7 @@ function accessMenu()
 	   print(string.format("%d. %s", i - 1, access[i]))
 	end
 	term.setTextColor(colors.yellow)
-	textutils.slowPrint("1337. Main menu")
+	print("1337. Main menu")
 
 	a = tonumber(read())
 	if (a == 1337) then
