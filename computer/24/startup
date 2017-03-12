@@ -1,3 +1,0 @@
-modem = peripheral.wrap("right")
-modem.open(2)
-modem.transmit(1, 2, "hello")

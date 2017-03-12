@@ -1,5 +1,8 @@
 level.dat_old
+session.lock
 stats/*
 playerdata/*
 DIM1/*
 DIM-1/*
+data/*
+computer/*
