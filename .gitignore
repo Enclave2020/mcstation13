@@ -1,4 +1,6 @@
 level.dat_old
+level_sponge.dat_old
+level_sponge.dat
 session.lock
 stats/*
 playerdata/*
